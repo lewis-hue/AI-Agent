@@ -13,6 +13,10 @@ app.config.from_mapping(
     SECRET_KEY=os.getenv('SECRET_KEY', 'your_secret_key'),  # Use environment variable or default
     LOGGING_LEVEL=os.getenv('LOGGING_LEVEL', 'DEBUG').upper()  # Default to 'DEBUG'
 )
+from flask_cors import CORS
+
+# Enable CORS
+CORS(app)
 
 # Set up logging
 logging.basicConfig(
